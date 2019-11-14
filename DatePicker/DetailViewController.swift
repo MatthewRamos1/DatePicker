@@ -13,7 +13,10 @@ class DetailViewController: UIViewController {
     var event: Event?
     //lazy variables arent created until the first time theyre initiated
     lazy var dateFormatter: DateFormatter = {
-        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
     }() //calls the closure
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var selectedDataLabel: UILabel!
