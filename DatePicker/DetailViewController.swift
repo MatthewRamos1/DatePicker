@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
+//        formatter.dateFormat
         return formatter
     }() //calls the closure
     @IBOutlet weak var messageLabel: UILabel!
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController {
         guard let date = event?.date else {
             return
         }
+        selectedDataLabel.text = dateFormatter.string(from: date)
         switchControl.isOn = event?.willAttend ?? false
         
         messageLabel.text = event?.name ?? "Event name not available"
