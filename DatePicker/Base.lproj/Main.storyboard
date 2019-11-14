@@ -26,13 +26,16 @@
         <!--Create Event-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DatePicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CreateEventViewController" customModule="DatePicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-bP-k4K">
                                 <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fs5-Ez-RdQ"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uto-Ei-D51">
                                 <rect key="frame" x="20" y="295" width="374" height="37"/>
@@ -42,6 +45,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-FJ-jEm">
                                 <rect key="frame" x="163" y="596" width="88" height="30"/>
                                 <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <segue destination="CuX-ij-kmW" kind="show" id="ulN-Q7-RDA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP NO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02A-1W-crO">
                                 <rect key="frame" x="171" y="634" width="72" height="21"/>
@@ -65,6 +71,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Event" id="SR3-Mp-COC"/>
+                    <connections>
+                        <outlet property="createEventButton" destination="H9i-FJ-jEm" id="qaK-dF-Vqd"/>
+                        <outlet property="datePicker" destination="mlX-bP-k4K" id="9tL-Su-20X"/>
+                        <outlet property="eventTextField" destination="uto-Ei-D51" id="Iae-Nq-ahX"/>
+                        <outlet property="rsvpLabel" destination="02A-1W-crO" id="VdJ-Vl-z4w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,9 +103,9 @@
                                 <rect key="frame" x="161.5" y="549.5" width="91" height="30"/>
                                 <state key="normal" title="Submit RSVP"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The Event is Set for:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-el-Gx4">
-                                <rect key="frame" x="131" y="348" width="154" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Event is Set for:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-el-Gx4">
+                                <rect key="frame" x="96" y="311.5" width="222" height="57.5"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -113,15 +125,17 @@
                             <constraint firstItem="App-xy-TnN" firstAttribute="top" secondItem="foF-jh-zkP" secondAttribute="bottom" constant="40" id="JeG-OR-HyK"/>
                             <constraint firstItem="App-xy-TnN" firstAttribute="centerX" secondItem="M7P-UR-yuc" secondAttribute="centerX" id="LMS-zJ-2nn"/>
                             <constraint firstItem="dNz-Cy-6QT" firstAttribute="top" secondItem="wgb-el-Gx4" secondAttribute="bottom" constant="8" id="TFs-Qf-Kn0"/>
+                            <constraint firstItem="wgb-el-Gx4" firstAttribute="centerX" secondItem="M7P-UR-yuc" secondAttribute="centerX" id="Wh5-yh-qmE"/>
                             <constraint firstItem="foF-jh-zkP" firstAttribute="top" secondItem="faX-41-DBq" secondAttribute="bottom" constant="20" id="cI3-Gc-Dza"/>
                             <constraint firstItem="dNz-Cy-6QT" firstAttribute="centerX" secondItem="M7P-UR-yuc" secondAttribute="centerX" id="mWe-cz-S17"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jFa-bQ-4Ac"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Meu-II-lYu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZx-Iw-LXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282.60869565217394" y="68.973214285714278"/>
+            <point key="canvasLocation" x="506" y="69"/>
         </scene>
     </scenes>
 </document>
