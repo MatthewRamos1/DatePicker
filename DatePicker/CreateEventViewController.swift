@@ -15,6 +15,18 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var createEventButton: UIButton!
     @IBOutlet weak var rsvpLabel: UILabel!
     
+    var event: Event! {
+        didSet {
+            if event.willAttend {
+                rsvpLabel.text = "RSVP YES"
+                createEventButton.setTitle("View Event", for: .normal)
+            } else {
+                rsvpLabel.text = "RSVP NO"
+                createEventButton.setTitle("RSVP to Event", for: .normal)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
