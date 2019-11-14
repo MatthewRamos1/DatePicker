@@ -11,18 +11,29 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var event: Event?
-
+    //lazy variables arent created until the first time theyre initiated
+    lazy var dateFormatter: DateFormatter = {
+        
+    }() //calls the closure
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var selectedDataLabel: UILabel!
+    @IBOutlet weak var switchControl: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare for segue")
+    func updateUI() {
+        guard let date = event?.date else {
+            return
+        }
+        switchControl.isOn = event?.willAttend ?? false
         
-        //here is where we want to set up and pass the event data to the detail view controller
+        messageLabel.text = event?.name ?? "Event name not available"
     }
+    
     /*
     // MARK: - Navigation
 

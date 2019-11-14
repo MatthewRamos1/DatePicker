@@ -33,9 +33,6 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-bP-k4K">
                                 <rect key="frame" x="47" y="340" width="320" height="216"/>
-                                <connections>
-                                    <action selector="datePickerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fs5-Ez-RdQ"/>
-                                </connections>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Event" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uto-Ei-D51">
                                 <rect key="frame" x="20" y="295" width="374" height="37"/>
@@ -82,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="-404.34782608695656" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="vX7-RZ-9Hh">
             <objects>
-                <viewController id="CuX-ij-kmW" sceneMemberID="viewController">
+                <viewController id="CuX-ij-kmW" customClass="DetailViewController" customModule="DatePicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7P-UR-yuc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +129,11 @@
                         <viewLayoutGuide key="safeArea" id="jFa-bQ-4Ac"/>
                     </view>
                     <navigationItem key="navigationItem" id="Meu-II-lYu"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="wgb-el-Gx4" id="LTT-UV-1Nc"/>
+                        <outlet property="selectedDataLabel" destination="dNz-Cy-6QT" id="XuW-ud-qCR"/>
+                        <outlet property="switchControl" destination="foF-jh-zkP" id="FqW-9S-NCQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZx-Iw-LXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
