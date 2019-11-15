@@ -105,6 +105,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="App-xy-TnN">
                                 <rect key="frame" x="161.5" y="549.5" width="91" height="30"/>
                                 <state key="normal" title="Submit RSVP"/>
+                                <connections>
+                                    <segue destination="pBW-s9-uCf" kind="unwind" unwindAction="updateUIFromUnwindWithSegue:" id="n4o-d3-ask"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Event is Set for:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-el-Gx4">
                                 <rect key="frame" x="96" y="311.5" width="222" height="57.5"/>
@@ -142,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZx-Iw-LXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pBW-s9-uCf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="506" y="69"/>
         </scene>
