@@ -39,6 +39,9 @@ class DetailViewController: UIViewController {
         messageLabel.text = event?.name ?? "Event name not available"
     }
     
+    @IBAction func rsvpChanged(_ sender: UISwitch) {
+        event?.willAttend = sender.isOn
+    }
     /*
     // MARK: - Navigation
 

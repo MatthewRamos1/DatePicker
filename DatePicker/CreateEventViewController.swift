@@ -40,8 +40,19 @@ class CreateEventViewController: UIViewController {
         event.date = sender.date
     }
     
+    //unwind segue
+    //step 1 write ib action: segue parameter is required
+    //step 2 type cast and get access to source
+    //step 3 setup UI accordingly
+    //step 4 drag action to exit icon in source
+    @IBAction func updateUIFromUnwind(segue: UIStoryboardSegue) {
+        guard let detailViewController = segue.source as? DetailViewController else {
+            return
+        }
+        event = detailViewController.event
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           print("prepare for segue")
            guard let detailViewController = segue.destination as? DetailViewController else {
                return
            }
